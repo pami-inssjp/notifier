@@ -19,7 +19,11 @@ var config = {
 
 	transport: {
 		mandrill: {
-			token: 'fake-mandrill-api-token'
+			token: 'Zs6ePWZb9FWJZ6QCMkEBQw',
+			from: {
+				email: 'no-reply@democracyos.org',
+				name: 'DemocracyOS'
+			}
 		},
 		twilio : {
 			accountSid: 'fake-twilio-account-sid',
