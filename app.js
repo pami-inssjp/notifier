@@ -6,11 +6,8 @@ var logger = require('./source/utils/logger');
 var templates = require('./source/templates');
 var t = require('./source/translations').t;
 
-function normalizeName (user) {
-  if (!user.name && user.firstName) {
-    user.name = user.firstName;
-  }
-  return user;
+function formatName (user) {
+  return user.lastName ? user.firstName + ' ' + user.lastName : user.firstName
 }
 
 // initialize actions, resolvers and executors
@@ -33,7 +30,7 @@ notifier
 
         var data = {
           email: user.email,
-          user: normalizeName(user),
+          user: { name: formatName(user) },
           validateUrl: action.validateUrl
         }
 
@@ -49,7 +46,7 @@ notifier
         ];
 
         // Add get content from jade template
-        templates.jade(action.id, vars, function (err, content) {
+        templates.jade('welcome-email', vars, function (err, content) {
 
           transport.mandrill('/messages/send', {
               message: {

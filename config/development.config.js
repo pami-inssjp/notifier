@@ -1,4 +1,6 @@
 var config = {
+	locale: 'en',
+
 	db: {
 		connection: 'mongodb://localhost:27017/DemocracyOS-dev',
 		aliases: {
