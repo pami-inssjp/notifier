@@ -1,5 +1,4 @@
 var mongo = require('mongojs');
-var logger = require('../utils/logger');
 
 module.exports = function (config, connection) {
   if (config.db) config = config.db;
