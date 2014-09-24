@@ -1,4 +1,6 @@
 var config = {
+	locale: process.env.LOCALE,
+
 	db: {
 		connection: process.env.MONGO_CONNECTION
 	},

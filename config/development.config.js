@@ -1,8 +1,10 @@
 var config = {
+	locale: 'en',
+
 	db: {
 		connection: 'mongodb://localhost:27017/DemocracyOS-dev',
 		aliases: {
-			users: "citizens"
+			user: "citizens"
 		}
 	},
 
@@ -19,7 +21,7 @@ var config = {
 
 	transport: {
 		mandrill: {
-			token: 'Zs6ePWZb9FWJZ6QCMkEBQw',
+			token: 'fake-mandrill-api-token',
 			from: {
 				email: 'no-reply@democracyos.org',
 				name: 'DemocracyOS'
