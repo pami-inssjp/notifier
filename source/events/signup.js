@@ -8,17 +8,20 @@ var t = require('../translations').t;
 module.exports = function signup(notifier) {
   if (!notifier || typeof notifier != 'object') throw new Error('Unable to initialize singup event - Undefined notifier');
 
+  function receive(event, actions, callback) {
+    logger.info('Received event ' + JSON.stringify(event));
+
+    actions.create('send-welcome', { user: event.user, validateUrl: event.validateUrl }, function (err) {
+      logger.info({message: 'Created "send-welcome" action for user ' + event.user });
+      callback && callback(err);
+    });
+
+  }
+
   // Receiver
   notifier
-    .receive('signup', function (event, actions, callback) {
-      logger.info('Received event ' + JSON.stringify(event));
-
-      actions.create('send-welcome', { user: event.user, validateUrl: event.validateUrl }, function (err) {
-        logger.info({message: 'Created "send-welcome" action for user ' + event.user });
-        callback && callback(err);
-      });
-
-    })
+    .receive('signup', receive)
+    .receive('resend-validation', receive)
 
   // Resolver
   notifier.resolve('send-welcome', function (action, actions, callback) {
