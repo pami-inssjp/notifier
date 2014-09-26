@@ -8,5 +8,7 @@
 
   "templates.forgot-password.subject": "DemocracyOS - Reestablecer contraseña",
   "templates.forgot-password.body": "Por favor cliquea <a href=\"{url}\">aquí</a> para reestablecer tu contraseña",
-  "templates.forgot-password.ps": "P.D.: si no solicitaste reestablecer tu contraseña, por favor ignora este correo"
+  "templates.forgot-password.ps": "P.D.: si no solicitaste reestablecer tu contraseña, por favor ignora este correo",
+
+  "templates.reply-argument.subject": "Alguien respondió tu argumento"
 }

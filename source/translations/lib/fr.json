@@ -8,5 +8,7 @@
 
   "templates.forgot-password.subject": "DemocracyOS - Rétablir mot de passe",
   "templates.forgot-password.body": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour rétablir ton mot de passe",
-  "templates.forgot-password.ps": "P.S.: Si vous n' avez pas demandé le rétablissement de votre mot de passe, ignorez s' il vous plaît ce courriel"
+  "templates.forgot-password.ps": "P.S.: Si vous n' avez pas demandé le rétablissement de votre mot de passe, ignorez s' il vous plaît ce courriel",
+
+  "templates.reply-argument.subject": "Quelqu'un a répondu à vos arguments"
 }
