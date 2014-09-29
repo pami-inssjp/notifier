@@ -30,20 +30,29 @@ module.exports = function (notifier) {
         return actions.skipped(action, callback);
       }
 
-      db.user.findOne({_id: ObjectId(id)}, function (err, author) {
+      db.user.findOne({ _id: ObjectId(action.comment.author) }, function (err, commentAuthor) {
         if (err) return callback(err);
-        if (!author) return callback({message: 'user not found', email: action.comment.author});
+        if (!commentAuthor) return callback({message: 'user not found', email: action.comment.author});
 
-        var data = {
-          author: author,
-          comment: action.comment,
-          reply: action.reply,
-          url: action.url
+        if (commentAuthor.notifications && !commentAuthor.notifications.replies) {
+          return actions.skipped(action, callback);
         }
 
-        logger.info('Received action ' + JSON.stringify(action) + ' with data ' + JSON.stringify(data));
-        actions.resolved(action, data, callback);
-      });
+        db.user.findOne({_id: ObjectId(id)}, function (err, author) {
+          if (err) return callback(err);
+          if (!author) return callback({message: 'user not found', email: action.comment.author});
+
+          var data = {
+            author: author,
+            comment: action.comment,
+            reply: action.reply,
+            url: action.url
+          }
+
+          logger.info('Received action ' + JSON.stringify(action) + ' with data ' + JSON.stringify(data));
+          actions.resolved(action, data, callback);
+        });
+      })
     })
 
     // Executor
