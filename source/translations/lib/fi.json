@@ -10,5 +10,11 @@
   "templates.forgot-password.body": "Klikkaa <a href=\"{url}\">tästä</a> vaihtaaksesi salasanasi",
   "templates.forgot-password.ps": "PS: Jos et pyytänyt salasanan uusintaa, älä huomioi tätä viestiä.",
 
-  "templates.reply-argument.subject": "joku vastasi perustelunne"
+  "templates.reply-argument.subject": "joku vastasi perustelunne",
+  "templates.reply-argument.body": "Sinulla on uusi vastaus teitä argumentti",
+  "templates.reply-argument.body2": "Ole hyvä ja klikkaa <a href=\"URL\">tästä</a> nähdä sen",
+
+  "templates.law-published.subject": "Uusi laki julkaistiin",
+  "templates.law-published.body": "uusi laki julkaistiin:",
+  "templates.law-published.body2": "Ole hyvä ja klikkaa <a href=\"URL\">tästä</a> nähdä sen"
 }

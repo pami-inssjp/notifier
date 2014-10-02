@@ -10,5 +10,11 @@
   "templates.forgot-password.body": "Please click <a href=\"RESET_PASSWORD_URL\">here</a> to reset your password",
   "templates.forgot-password.ps": "PS: if you haven't requested to reset your password, please ignore this email",
 
-  "templates.reply-argument.subject": "Someone replied to your argument"
+  "templates.reply-argument.subject": "Someone replied to your argument",
+  "templates.reply-argument.body": "You have a new reply on you argument",
+  "templates.reply-argument.body2": "Please click <a href=\"URL\">here</a> to see it",
+
+  "templates.law-published.subject": "New law published",
+  "templates.law-published.body": "A new law was published:",
+  "templates.law-published.body2": "Please click <a href=\"URL\">here</a> to see it"
 }

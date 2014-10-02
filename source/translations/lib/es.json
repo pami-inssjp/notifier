@@ -10,5 +10,9 @@
   "templates.forgot-password.body": "Por favor cliquea <a href=\"{url}\">aquí</a> para reestablecer tu contraseña",
   "templates.forgot-password.ps": "P.D.: si no solicitaste reestablecer tu contraseña, por favor ignora este correo",
 
-  "templates.reply-argument.subject": "Alguien respondió tu argumento"
+  "templates.reply-argument.subject": "Alguien respondió tu argumento",
+
+  "templates.law-published.subject": "Nueva ley publicada",
+  "templates.law-published.body": "Una nueva ley fue publicada:",
+  "templates.law-published.body2": "Por favor haz click <a href=\"URL\">aquí</a> para verla"
 }

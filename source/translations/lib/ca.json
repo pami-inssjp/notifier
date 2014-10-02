@@ -10,5 +10,11 @@
   "templates.forgot-password.body": "Si us plau, cliqui <a href=\"{url}\">aquí</a> per generar la teva contrasenya",
   "templates.forgot-password.ps": "P.D.: Si no has generat la teva contrasenya, si us plau ignora aquest correu",
 
-  "templates.reply-argument.subject": "Algú va respondre al seu argument"
+  "templates.reply-argument.subject": "Algú va respondre al seu argument",
+  "templates.reply-argument.body": "Vostè té una nova resposta en que l'argument",
+  "templates.reply-argument.body2": "Si us plau, feu clic <a href=\"URL\">aquí</a> per veure-ho",
+
+  "templates.law-published.subject": "Nova llei publicada",
+  "templates.law-published.body": "Una nova llei va ser publicada:",
+  "templates.law-published.body2": "Si us plau, feu clic <a href=\"URL\">aquí</a> per veure-ho"
 }

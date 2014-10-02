@@ -10,5 +10,11 @@
   "templates.forgot-password.body": "Cliquez s' il vous plaît sur <a href=\"{url}\">ici</a> pour rétablir ton mot de passe",
   "templates.forgot-password.ps": "P.S.: Si vous n' avez pas demandé le rétablissement de votre mot de passe, ignorez s' il vous plaît ce courriel",
 
-  "templates.reply-argument.subject": "Quelqu'un a répondu à vos arguments"
+  "templates.reply-argument.subject": "Quelqu'un a répondu à vos arguments",
+  "templates.reply-argument.body": "Vous avez une nouvelle réponse sur vous l'argument",
+  "templates.reply-argument.body2": "S'il vous plaît cliquer <a href=\"URL\">ici</a> pour voir",
+
+  "templates.law-published.subject": "La nouvelle loi publiée",
+  "templates.law-published.body": "Une nouvelle loi a été publiée:",
+  "templates.law-published.body2": "S'il vous plaît cliquer <a href=\"URL\">ici</a> pour voir"
 }
