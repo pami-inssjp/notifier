@@ -2,7 +2,10 @@ var config = {
 	locale: process.env.LOCALE,
 
 	db: {
-		connection: process.env.MONGO_CONNECTION
+		connection: process.env.MONGO_CONNECTION,
+		aliases: {
+			user: "citizens"
+		}
 	},
 
 	accessToken: process.env.ACCESS_TOKEN,
@@ -18,7 +21,11 @@ var config = {
 
 	transport: {
 		mandrill: {
-			token: process.env.MANDRILL_TOKEN
+			token: process.env.MANDRILL_TOKEN,
+			from: {
+				email: process.env.MANDRILL_FROM_EMAIL,
+				name: process.env.MANDRILL_FROM_NAME
+			}
 		},
 		twilio : {
 			accountSid: process.env.TWILIO_ACCOUNT_SID,
