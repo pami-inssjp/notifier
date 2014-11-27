@@ -7,14 +7,14 @@
   "templates.welcome-email.ps": "PS: if you didn't sign up, please ignore this email.",
 
   "templates.forgot-password.subject": "DemocracyOS - Password reset requested",
-  "templates.forgot-password.body": "Please click <a href=\"RESET_PASSWORD_URL\">here</a> to reset your password",
+  "templates.forgot-password.body": "Please <a href=\"RESET_PASSWORD_URL\">click here</a> to reset your password",
   "templates.forgot-password.ps": "PS: if you haven't requested to reset your password, please ignore this email",
 
   "templates.reply-argument.subject": "Someone replied to your argument",
-  "templates.reply-argument.body": "You have a new reply on you argument",
-  "templates.reply-argument.body2": "Please click <a href=\"URL\">here</a> to see it",
+  "templates.reply-argument.body": "You have a new reply on you argument:",
+  "templates.reply-argument.body2": "Please <a href=\"URL\">click here</a> to see it.",
 
   "templates.law-published.subject": "New law published",
   "templates.law-published.body": "A new law was published:",
-  "templates.law-published.body2": "Please click <a href=\"URL\">here</a> to see it"
+  "templates.law-published.body2": "Please <a href=\"URL\">click here</a> to see it."
 }

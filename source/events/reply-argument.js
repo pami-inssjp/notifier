@@ -15,7 +15,7 @@ module.exports = function (notifier) {
       logger.info('Received event ' + JSON.stringify(event));
 
       actions.create('reply-argument', { reply: event.reply, comment: event.comment, url: event.url }, function (err) {
-        logger.info({message: 'Created "send-welcome" action for user ' + event.user });
+        logger.info({message: 'Created "reply-argument" action for user ' + event.user });
         callback && callback(err);
       });
 
