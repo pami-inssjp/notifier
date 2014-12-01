@@ -2,6 +2,7 @@ var config = require('../../config');
 var db = require('../db')(config.db);
 var transport = require('../transport');
 var logger = require('../utils/logger');
+var name = require('../utils/name');
 var templates = require('../templates');
 var t = require('../translations').t;
 var ObjectId = require('mongojs').ObjectId;
@@ -58,7 +59,7 @@ module.exports = function (notifier) {
     // Executor
     .execute('reply-argument', function (action, transport, callback) {
         var vars = [
-          {name: 'USER_NAME', content: formatName(action.data.author)},
+          {name: 'USER_NAME', content: name.format(action.data.author)},
           {name: 'REPLY', content: action.reply.text},
           {name: 'URL', content: action.data.url}
         ];
@@ -83,10 +84,4 @@ module.exports = function (notifier) {
             });
         });
     });
-}
-
-
-
-function formatName (user) {
-  return user.lastName ? user.firstName + ' ' + user.lastName : user.firstName
 }
