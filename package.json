@@ -29,7 +29,6 @@
     "apn": "^1.6.0",
     "async": "~0.7.0",
     "colors": "~0.6.2",
-    "debug": "~0.7.4",
     "express": "~3.5.1",
     "moment": "~2.6.0",
     "mongojs": "~0.11.0",
@@ -41,6 +40,7 @@
     "respawn": "~0.3.1",
     "twilio": "^1.6.0",
     "underscore": "~1.4.4",
+    "debug": "~0.7.4",
     "jade": "~0.35.0",
     "merge-util": "0.1.0",
     "t-component": "1.0.0"
