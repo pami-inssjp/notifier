@@ -25,15 +25,15 @@ module.exports = function (notifier) {
   // Resolver
     .resolve('reply-argument', function (action, actions, callback) {
       logger.info('Resolving action ' + JSON.stringify(action));
-      var id = action.comment.author;
+      var id = action.comment.author.id;
 
       if (action.reply.author.id == id) {
         return actions.skipped(action, callback);
       }
 
-      db.user.findOne({ _id: ObjectId(action.comment.author) }, function (err, commentAuthor) {
+      db.user.findOne({ _id: ObjectId(action.comment.author.id) }, function (err, commentAuthor) {
         if (err) return callback(err);
-        if (!commentAuthor) return callback({message: 'user not found', email: action.comment.author});
+        if (!commentAuthor) return callback({message: 'user not found', email: action.comment.author.id });
 
         if (commentAuthor.notifications && !commentAuthor.notifications.replies) {
           return actions.skipped(action, callback);
@@ -41,11 +41,14 @@ module.exports = function (notifier) {
 
         db.user.findOne({_id: ObjectId(id)}, function (err, author) {
           if (err) return callback(err);
-          if (!author) return callback({message: 'user not found', email: action.comment.author});
+          if (!author) return callback({message: 'user not found', email: action.comment.author.id });
 
           var data = {
-            author: author,
-            comment: action.comment,
+            author: {
+              firstName: author.firstName,
+              lastName: author.lastName,
+              email: author.email
+            },
             reply: action.reply,
             url: action.url
           }
