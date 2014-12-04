@@ -1,4 +1,10 @@
 
+0.1.2 / 2014-12-04
+==================
+
+ * remove unneeded data from argument-replies flow #9
+ * update codebase to version 0.1.0 of likeastore/notifier
+
 0.1.1 / 2014-12-01
 ==================
 
