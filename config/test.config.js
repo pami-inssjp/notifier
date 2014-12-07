@@ -1,6 +1,8 @@
 var config = {
 	locale: 'en',
 
+	port: 9001,
+
 	db: {
 		connection: 'mongodb://localhost:27017/notifier-test'
 	},

@@ -1,6 +1,8 @@
 var config = {
 	locale: process.env.LOCALE,
 
+	port: process.env.PORT,
+
 	db: {
 		connection: process.env.MONGO_CONNECTION,
 		aliases: {
