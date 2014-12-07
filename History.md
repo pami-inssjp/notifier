@@ -1,4 +1,12 @@
 
+0.1.3 / 2014-12-07
+==================
+
+ * Add German, Dutch and Portuguese translations
+ * Remove 'DemocracyOS' from mail subjects
+ * Fix existing translations
+ * Add PORT variable to config
+
 0.1.2 / 2014-12-04
 ==================
 
