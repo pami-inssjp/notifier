@@ -7,7 +7,8 @@ var config = {
 		connection: process.env.MONGO_CONNECTION,
 		aliases: {
 			user: "citizens"
-		}
+		},
+		collections: env.COLLECTIONS ? env.COLLECTIONS.split(',') : null
 	},
 
 	accessToken: '1234',

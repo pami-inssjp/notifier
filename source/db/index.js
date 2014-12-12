@@ -6,7 +6,11 @@ module.exports = function (config, connection) {
 	connection = connection || 'connection';
 
   // default db collections
-  var collections = ['actions', 'user', 'laws', 'tags'];
+  var collections = ['actions'];
+
+  for (var c in config.collections) {
+    collections.push(c);
+  }
 
   // add db aliases to default collections
   for (var key in config.aliases) {

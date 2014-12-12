@@ -4,7 +4,8 @@ var config = {
 	port: 9001,
 
 	db: {
-		connection: 'mongodb://localhost:27017/notifier-test'
+		connection: 'mongodb://localhost:27017/notifier-test',
+		collections: [ 'user', 'laws', 'tags' ]
 	},
 
 	accessToken: '1234',

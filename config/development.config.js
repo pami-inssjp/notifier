@@ -6,8 +6,9 @@ var config = {
 	db: {
 		connection: 'mongodb://localhost:27017/DemocracyOS-dev',
 		aliases: {
-			user: "citizens"
-		}
+			user: 'citizens'
+		},
+		collections: [ 'user', 'laws', 'tags' ]
 	},
 
 	accessToken: '1234',
