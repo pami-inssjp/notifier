@@ -1,21 +1,20 @@
 {
   "templates.email.greeting": "Hei, USER_NAME,",
-  "templates.welcome-email.signature": "DemocracyOS tiimi.",
+  "templates.email.signature": "DemocracyOS tiimi.",
 
-  "templates.welcome-email.subject": "DemocracyOS - Tervetuloa!",
-  "templates.welcome-email.body": "<a href=\"VALIDATE_MAIL_URL\">Klikkaa tästä</a> vahvistaaksesi email-osoitteesi.",
+  "templates.welcome-email.subject": "Tervetuloa DemocracyOS!",
+  "templates.welcome-email.body": "Ole hyvä <a href=\"VALIDATE_MAIL_URL\">klikkaa tästä</a> vahvistaaksesi email-osoitteesi.",
+  "templates.welcome-email.ps": "Jos et rekisteröitynyt, älä huomioi tätä viestiä.",
 
-  "templates.welcome-email.ps": "PS: Jos et rekisteröitynyt, älä huomioi tätä viestiä.",
+  "templates.forgot-password.subject": "Vaaditaan salasanan päivitys",
+  "templates.forgot-password.body": "Ole hyvä <a href=\"{url}\">klikkaa tästä</a> vaihtaaksesi salasanasi",
+  "templates.forgot-password.ps": "Jos et pyytänyt salasanan uusintaa, älä huomioi tätä viestiä.",
 
-  "templates.forgot-password.subject": "DemocracyOS - Vaaditaan salasanan päivitys",
-  "templates.forgot-password.body": "Klikkaa <a href=\"{url}\">tästä</a> vaihtaaksesi salasanasi",
-  "templates.forgot-password.ps": "PS: Jos et pyytänyt salasanan uusintaa, älä huomioi tätä viestiä.",
-
-  "templates.reply-argument.subject": "joku vastasi perustelunne",
+  "templates.reply-argument.subject": "Joku vastasi perustelunne",
   "templates.reply-argument.body": "Sinulla on uusi vastaus teitä argumentti",
-  "templates.reply-argument.body2": "Ole hyvä ja klikkaa <a href=\"URL\">tästä</a> nähdä sen",
+  "templates.reply-argument.body2": "Ole hyvä ja <a href=\"URL\">klikkaa tästä</a> nähdä sen",
 
   "templates.law-published.subject": "Uusi laki julkaistiin",
-  "templates.law-published.body": "uusi laki julkaistiin:",
-  "templates.law-published.body2": "Ole hyvä ja klikkaa <a href=\"URL\">tästä</a> nähdä sen"
+  "templates.law-published.body": "Uusi laki julkaistiin:",
+  "templates.law-published.body2": "Ole hyvä ja <a href=\"URL\">klikkaa tästä</a> nähdä sen"
 }
