@@ -44,7 +44,7 @@ function validateEvent(req, res, next) {
 }
 
 app.get('/', function (req, res) {
-	res.json({app: 'notifier', env: process.env.NODE_ENV, version: package.version, apiUrl: '/api'});
+	res.json({app: 'notifier', env: process.env.NODE_ENV, port: process.env.PORT, version: package.version, apiUrl: '/api'});
 });
 
 app.post('/api/events', checkAccessToken, validateEvent, function (req, res) {
