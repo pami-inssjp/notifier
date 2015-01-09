@@ -4,7 +4,7 @@ var config = {
 	port: process.env.PORT,
 
 	db: {
-		connection: process.env.MONGO_URI,
+		connection: process.env.MONGO_URL,
 		aliases: {
 			user: 'citizens'
 		}
