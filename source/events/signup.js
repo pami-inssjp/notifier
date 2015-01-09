@@ -8,6 +8,7 @@ var t = require('../translations').t;
 module.exports = function signup(notifier) {
   if (!notifier || typeof notifier != 'object') throw new Error('Unable to initialize singup event - Undefined notifier');
 
+  // Receiver
   function receive(event, actions, callback) {
     logger.info('Received event ' + JSON.stringify(event));
 
