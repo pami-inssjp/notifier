@@ -21,12 +21,12 @@ module.exports = function (notifier) {
         users.forEach(function (user) {
           actions.create('law-published',
             {
-              law: { id: event.law.id },
+              law: event.law,
               url: event.url,
               user: { name: name.format(user), email: user.email }
             },
               function (err) {
-            logger.info({message: 'Created "law-published" action for law ' + event.law.id });
+            logger.info({ message: 'Created "law-published" action for law ' + event.law.mediaTitle });
             callback && callback(err);
           });
         });
@@ -38,17 +38,13 @@ module.exports = function (notifier) {
     .resolve('law-published', function (action, actions, callback) {
       logger.info('Resolving action ' + JSON.stringify(action));
 
-      db.laws.findOne( { '_id': ObjectId(action.law.id) }, function(err, law){
-        if (err) return callback(err);
+      var data = {
+        url: action.url,
+        law: action.law,
+        user: action.user
+      };
 
-        var data = {
-          url: action.url,
-          law: { id: law.id, title: law.mediaTitle },
-          user: action.user
-        };
-
-        actions.resolved(action, data, callback);
-      });
+      actions.resolved(action, data, callback);
     })
 
     // Executor
@@ -58,7 +54,7 @@ module.exports = function (notifier) {
         var user = action.data.user;
 
         var vars = [
-          {name: 'LAW', content: law.title},
+          {name: 'LAW', content: law.mediaTitle},
           {name: 'URL', content: url},
           {name: 'USER_NAME', content: user.name}
         ];
