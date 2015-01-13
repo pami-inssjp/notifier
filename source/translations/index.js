@@ -18,6 +18,7 @@ var fi = require('./lib/fi');
 var it = require('./lib/it');
 var nl = require('./lib/nl');
 var pt = require('./lib/pt');
+var uk = require('./lib/uk');
 
 module.exports.t = t;
 
@@ -47,5 +48,8 @@ t.nl = nl;
 
 // Portuguese
 t.pt = pt;
+
+// Ukrainian
+t.uk = uk;
 
 t.lang(config.locale);
