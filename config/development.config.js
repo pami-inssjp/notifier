@@ -4,7 +4,7 @@ var config = {
 	port: 9001,
 
 	db: {
-		connection: 'mongodb://localhost:27017/DemocracyOS-dev',
+		connection: 'mongodb://localhost:27017/DemocracyOS-users-dev',
 		aliases: {
 			user: "citizens"
 		}
