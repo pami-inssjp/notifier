@@ -1,6 +1,6 @@
 {
   "name": "notifier",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Service for sending notifications to users",
   "main": "index.js",
   "scripts": {
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/likeastore/notifier.git"
+    "url": "git://github.com/DemocracyOS/notifier.git"
   },
-  "author": "alexander.beletsky@gmail.com",
+  "author": "guido@democraciaenred.org",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/likeastore/notifier/issues"
+    "url": "https://github.com/DemocracyOS/notifier/issues"
   },
   "devDependencies": {
     "mocha": "~1.10.0",
     "chai": "~1.6.1",
     "sinon-chai": "~2.4.0"
   },
-  "homepage": "https://github.com/likeastore/notifier",
+  "homepage": "https://github.com/DemocracyOS/notifier",
   "dependencies": {
     "agenda": "~0.6.4",
     "apn": "^1.6.0",
