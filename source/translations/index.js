@@ -15,6 +15,7 @@ var ca = require('./lib/ca');
 var de = require('./lib/de');
 var fr = require('./lib/fr');
 var fi = require('./lib/fi');
+var gl = require('./lib/gl');
 var it = require('./lib/it');
 var nl = require('./lib/nl');
 var pt = require('./lib/pt');
