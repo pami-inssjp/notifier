@@ -1,4 +1,14 @@
 
+0.1.4 / 2015-01-17
+==================
+
+ * Add Galician translation
+ * Add Ukrainian transolation
+ * added uk.json support
+ * Remove non-user database access for 'law-published' event. Closes #22
+ * Change MONGO_CONNECTION to MONGO_URL. Closes #23
+ * Add app port to '/' response JSON
+
 0.1.3 / 2014-12-07
 ==================
 
