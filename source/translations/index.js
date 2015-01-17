@@ -41,6 +41,9 @@ t.fr = fr;
 // Finnish
 t.fi = fi;
 
+// Galician
+t.gl = gl;
+
 // Italian
 t.it = it;
 
