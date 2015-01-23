@@ -1,4 +1,9 @@
 
+0.1.5 / 2015-01-22
+==================
+
+ * Update configuration default aliases from user->citizens to user->users
+
 0.1.4 / 2015-01-17
 ==================
 
