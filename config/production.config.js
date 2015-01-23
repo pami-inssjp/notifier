@@ -6,7 +6,7 @@ var config = {
 	db: {
 		connection: process.env.MONGO_URL,
 		aliases: {
-			user: 'citizens'
+			user: 'users'
 		}
 	},
 
