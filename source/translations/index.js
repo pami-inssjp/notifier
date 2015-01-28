@@ -19,6 +19,7 @@ var gl = require('./lib/gl');
 var it = require('./lib/it');
 var nl = require('./lib/nl');
 var pt = require('./lib/pt');
+var ru = require('./lib/ru');
 var uk = require('./lib/uk');
 
 module.exports.t = t;
@@ -52,6 +53,9 @@ t.nl = nl;
 
 // Portuguese
 t.pt = pt;
+
+// Russian
+t.ru = ru;
 
 // Ukrainian
 t.uk = uk;
