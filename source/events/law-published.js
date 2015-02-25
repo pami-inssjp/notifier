@@ -15,23 +15,36 @@ module.exports = function (notifier) {
     .receive('law-published', function (event, actions, callback) {
       logger.info('Received event ' + JSON.stringify(event));
 
+      var law = event.law;
+
       db.user.find({ 'notifications.new-topic': true }, function (err, users) {
         if (err) return callback(err);
 
         users.forEach(function (user) {
           actions.create('law-published',
             {
-              law: { id: event.law.id },
+              law: { id: law.id },
               url: event.url,
               user: { name: name.format(user), email: user.email }
             },
               function (err) {
-            logger.info({message: 'Created "law-published" action for law ' + event.law.id });
+            logger.info({message: 'Created "law-published" action for law ' + law.id });
             callback && callback(err);
           });
         });
-      })
+      });
 
+      actions.create('update-feed',
+        {
+          type: 'law-published',
+          law: law.id,
+          url: event.instance
+        },
+        function (err) {
+          logger.info({message: 'Created "update-feed" action for law ' + law.id + ' in ' + event.instance });
+          if (callback) callback(err);
+        }
+      )
     })
 
   // Resolver
@@ -51,36 +64,63 @@ module.exports = function (notifier) {
       });
     })
 
+    .resolve('update-feed', function (action, actions, callback) {
+      logger.info('Resolving action ' + JSON.stringify(action));
+
+      var data = {
+        law: action.law,
+        url: action.url,
+        type: action.type
+      }
+
+      actions.resolved(action, data, callback);
+    })
+
     // Executor
     .execute('law-published', function (action, transport, callback) {
         var law = action.data.law;
         var url = action.data.url;
         var user = action.data.user;
 
-        var vars = [
-          {name: 'LAW', content: law.title},
-          {name: 'URL', content: url},
-          {name: 'USER_NAME', content: user.name}
-        ];
+        db.feeds.save({url: url, law: law.id}, function (err, feed) {
+          if (err) return logger.err('Error found %s', err), callback(err);
 
-        templates.jade('law-published', vars, function (err, content) {
-          logger.info('Notifying user ' + user.email);
+          logger.info('Saved feed for published law %s', law.id);
 
-          transport.mandrill('/messages/send', {
-            message: {
-              auto_html: null,
-              to: [{email: user.email}],
-              preserve_recipients: false,
-              from_email: config.transport.mandrill.from.email,
-              from_name: config.transport.mandrill.from.name,
-              subject: t('templates.law-published.subject'),
-              text: content,
-              html: content,
-              auto_text: true
-            }
-          }, function (err) {
-            callback && callback(err);
+          var vars = [
+            {name: 'LAW', content: law.title},
+            {name: 'URL', content: url},
+            {name: 'USER_NAME', content: user.name}
+          ];
+
+          templates.jade('law-published', vars, function (err, content) {
+            logger.info('Notifying user ' + user.email);
+
+            transport.mandrill('/messages/send', {
+              message: {
+                auto_html: null,
+                to: [{email: user.email}],
+                preserve_recipients: false,
+                from_email: config.transport.mandrill.from.email,
+                from_name: config.transport.mandrill.from.name,
+                subject: t('templates.law-published.subject'),
+                text: content,
+                html: content,
+                auto_text: true
+              }
+            }, function (err) {
+              callback && callback(err);
+            });
           });
         });
+    })
+
+    .execute('update-feed', function (action, transport, callback) {
+      db.feeds.save(action.data, function (err, feed) {
+        if (err) return logger.err('Error found %s', err), callback(err);
+
+        logger.info('Saved feed for published law %s', action.data.law);
+        if (callback) callback(null, feed);
+      });
     });
 }
