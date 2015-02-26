@@ -85,7 +85,7 @@ module.exports = function (notifier) {
         db.feeds.save({url: url, law: law.id}, function (err, feed) {
           if (err) return logger.err('Error found %s', err), callback(err);
 
-          logger.info('Saved feed for published law %s', law.id);
+          logger.info('Saved feed for published law ' + law.id);
 
           var vars = [
             {name: 'LAW', content: law.title},
