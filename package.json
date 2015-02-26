@@ -1,6 +1,6 @@
 {
   "name": "notifier",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Service for sending notifications to users",
   "main": "index.js",
   "scripts": {
