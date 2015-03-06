@@ -8,47 +8,53 @@ module.exports = function (notifier) {
 
   // Receiver
   notifier
-    .receive('law-published', function (event, actions, callback) {
+    .receive('law-voted', function (event, actions, callback) {
       logger.info('Received event ' + JSON.stringify(event));
 
-      var law = event.law;
-
-      actions.create('update-feed',
+      actions.create('law-voted',
         {
-          type: 'law-published',
-          law: law.id,
-          url: event.instance
+          type: 'law-voted',
+          law: event.law,
+          user: event.user,
+          vote: event.vote,
+          instance: event.instance
         },
         function (err) {
-          logger.info({message: 'Created "update-feed" action for law ' + law.id + ' in ' + event.instance });
+          logger.info({message: 'Created "law-voted" action for law ' + event.law + ' in ' + event.instance });
           if (callback) callback(err);
         }
       );
     })
 
   // Resolver
-    .resolve('update-feed', function (action, actions, callback) {
+    .resolve('law-voted', function (action, actions, callback) {
       logger.info('Resolving action ' + JSON.stringify(action));
 
       var feed = {
-        data: { law: action.law },
-        url: action.url,
-        type: action.type
+        type: action.type,
+        url: action.instance,
+        data: {
+                law: action.law,
+                user: action.user,
+                vote: action.vote
+              }
       }
 
       actions.resolved(action, feed, callback);
     })
 
     // Executor
-    .execute('update-feed', function (action, transport, callback) {
+    .execute('law-voted', function (action, transport, callback) {
       db.feeds.findOne({ url: action.instance }, function (err, feed) {
         if (err) return logger.err('Error found %s', err), callback(err);
 
         feed = feed || {};
         feed.type = action.type;
-        feed.url = action.url;
+        feed.url = action.instance;
         feed.data = {
                       law: action.law,
+                      user: action.user,
+                      vote: action.vote
                     };
 
         db.feeds.save(feed, function (err, feed) {
