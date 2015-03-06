@@ -1,4 +1,9 @@
 
+0.1.9 / 2015-03-06
+==================
+
+  * [update-feed] - Fix getting instance url from action
+
 0.1.8 / 2015-03-06
 ==================
 
