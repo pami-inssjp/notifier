@@ -7,6 +7,7 @@ require('./source/events/forgot-password')(notifier);
 require('./source/events/reply-argument')(notifier);
 require('./source/events/law-published')(notifier);
 require('./source/events/update-feed')(notifier);
+require('./source/events/law-voted')(notifier);
 
 // start the server
 notifier.start(config.port || 9001);
