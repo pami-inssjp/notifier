@@ -41,7 +41,7 @@ module.exports = function (notifier) {
 
     // Executor
     .execute('update-feed', function (action, transport, callback) {
-      db.feeds.findOne({ url: action.instance }, function (err, feed) {
+      db.feeds.findOne({ url: action.url }, function (err, feed) {
         if (err) return logger.err('Error found %s', err), callback(err);
 
         feed = feed || {};
