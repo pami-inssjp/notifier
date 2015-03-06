@@ -1,4 +1,10 @@
 
+0.1.8 / 2015-03-06
+==================
+
+  * [law-commented] - Add a new feed story when 'law-commented' is received
+  * [law-voted] - Add a new feed story when 'law-voted' is received
+
 0.1.7 / 2015-02-26
 ==================
 
