@@ -47,9 +47,8 @@ module.exports = function (notifier) {
         feed = feed || {};
         feed.type = action.type;
         feed.url = action.url;
-        feed.data = {
-                      law: action.law,
-                    };
+        feed.data = { law: action.law };
+        if (action.deploymentId) feed.deploymentId = action.deploymentId;
 
         db.feeds.save(feed, function (err, feed) {
           if (err) return logger.err('Error found %s', err), callback(err);
