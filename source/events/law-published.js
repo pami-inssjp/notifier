@@ -25,7 +25,7 @@ module.exports = function (notifier) {
             },
             function (err) {
               logger.info({ message: 'Created "law-published" action for law ' + event.law.mediaTitle });
-              if (callback) callback(err);
+              callback && callback(err);
             }
           );
         });
@@ -74,7 +74,7 @@ module.exports = function (notifier) {
               auto_text: true
             }
           }, function (err) {
-            if (callback) callback(err);
+            callback && callback(err);
           });
         });
     });
