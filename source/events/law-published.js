@@ -1,11 +1,9 @@
 var config = require('../../config');
 var db = require('../db')(config.db);
-var transport = require('../transport');
 var logger = require('../utils/logger');
 var name = require('../utils/name');
 var templates = require('../templates');
 var t = require('../translations').t;
-var ObjectId = require('mongojs').ObjectId;
 
 module.exports = function (notifier) {
   if (!notifier || typeof notifier != 'object') throw new Error('Unable to initialize law-published event - Undefined notifier');
@@ -25,10 +23,11 @@ module.exports = function (notifier) {
               url: event.url,
               user: { name: name.format(user), email: user.email }
             },
-              function (err) {
-            logger.info({ message: 'Created "law-published" action for law ' + event.law.mediaTitle });
-            callback && callback(err);
-          });
+            function (err) {
+              logger.info({ message: 'Created "law-published" action for law ' + event.law.mediaTitle });
+              if (callback) callback(err);
+            }
+          );
         });
       })
 
@@ -75,7 +74,7 @@ module.exports = function (notifier) {
               auto_text: true
             }
           }, function (err) {
-            callback && callback(err);
+            if (callback) callback(err);
           });
         });
     });
