@@ -2,7 +2,7 @@
   "templates.email.greeting": "Ola, USER_NAME",
   "templates.email.signature": "A Marea Atlántica.",
 
-  "templates.welcome-email.subject": "Benvinda!",
+  "templates.welcome-email.subject": "Benvinda a DemocracyOS!",
   "templates.welcome-email.body": "Por favor <a href=\"VALIDATE_MAIL_URL\">fai click</a> para validar o teu enderezo de correo electrónico.",
   "templates.welcome-email.ps": "P.D.: se non creaches unha conta, por favor ignora esta mensaxe.",
 
