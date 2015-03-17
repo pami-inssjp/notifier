@@ -1,4 +1,5 @@
 var express = require('express');
+var sslRedirect = require('heroku-ssl-redirect');
 var postal = require('postal');
 
 var config = require('../config');
@@ -22,6 +23,7 @@ app.configure(function(){
 	app.use(cors);
 	app.use(express.methodOverride());
 	app.use(app.router);
+	app.use(sslRedirect()); // only works when `NODE_ENV` == 'production'
 });
 
 function checkAccessToken(req, res, next) {
