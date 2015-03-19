@@ -1,4 +1,5 @@
 var express = require('express');
+var sslRedirect = require('./ssl');
 var postal = require('postal');
 
 var config = require('../config');
@@ -17,6 +18,7 @@ var cors = function (req, res, next) {
 };
 
 app.configure(function(){
+	app.use(sslRedirect()); // only works when `NODE_ENV` == 'production'
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
 	app.use(cors);
