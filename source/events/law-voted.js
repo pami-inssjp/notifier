@@ -51,6 +51,7 @@ module.exports = function (notifier) {
         feed = feed || {};
         feed.type = action.type;
         feed.url = action.instance;
+        feed.feededAt = Date.now();
         feed.data = {
                       law: action.law,
                       user: action.user,
