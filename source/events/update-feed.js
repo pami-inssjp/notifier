@@ -48,6 +48,7 @@ module.exports = function (notifier) {
         feed.type = action.type;
         feed.url = action.url;
         feed.data = { law: action.law };
+        feed.feededAt = Date.now();
         if (action.deploymentId) feed.deploymentId = action.deploymentId;
 
         db.feeds.save(feed, function (err, feed) {
