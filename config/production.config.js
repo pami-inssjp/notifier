@@ -28,17 +28,6 @@ var config = {
 				email: process.env.MANDRILL_FROM_EMAIL,
 				name: process.env.MANDRILL_FROM_NAME
 			}
-		},
-		twilio : {
-			accountSid: process.env.TWILIO_ACCOUNT_SID,
-			authToken: process.env.TWILIO_ACCOUNT_TOKEN
-		},
-		gcm : {
-			serverApiKey: process.env.GOOGLE_SERVER_API_KEY
-		},
-		apn : {
-			cert: process.env.APPLE_CERT,
-			key: process.env.APPLE_KEY
 		}
 	},
 
