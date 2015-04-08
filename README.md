@@ -2,6 +2,11 @@
 
 HTTP API that receives the event and turning that event into corresponding notification.
 
+This fork was created for IT Pami to include the following changes:
+
+* [Keep Mandrill as the only transport available](https://github.com/pami-inssjp/notifier/commit/9742b706a3d1d6a6f910a0415e8132e9c90964ac)
+* [Remove SSL redirection and update request package](https://github.com/pami-inssjp/notifier/commit/822048eb8bb80450db74193807cdc6f47b7123f7)
+
 ## API
 
 The entry point of application responsible for initializing the `notifier`.
