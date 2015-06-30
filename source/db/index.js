@@ -6,7 +6,8 @@ module.exports = function (config, connection) {
 	connection = connection || 'connection';
 
   // default db collections
-  var collections = ['actions', 'user', 'laws', 'tags', 'feeds'];
+  // If using HUB: var collections = ['actions', 'user', 'laws', 'tags', 'feeds'];
+  var collections = ['actions', 'user', 'laws', 'tags'];
 
   // add db aliases to default collections
   for (var key in config.aliases) {
